@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, void *src, size_t n)
 {

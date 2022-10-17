@@ -6,26 +6,28 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:39:24 by florian           #+#    #+#             */
-/*   Updated: 2022/10/14 15:45:31 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:59:00 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(char const *str, int c)
 {
 	int				length;
 	unsigned char	chr;
+	char			*strr;
 
+	strr = (char *)str;
 	chr = (unsigned char)c;
-	length = ft_strlen(str);
-	while (*str != chr)
+	length = ft_strlen(strr);
+	while (*strr != chr)
 	{
 		if ((length) == 0)
 			return (NULL);
-		str++;
+		strr++;
 		length--;
 	}
-	return (str);
+	return (strr);
 }

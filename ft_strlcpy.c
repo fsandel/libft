@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:39:17 by florian           #+#    #+#             */
-/*   Updated: 2022/10/14 15:25:16 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:58:33 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	length;
 
-	
 	length = ft_strlen(src);
 	if (size == 0)
 		return (length);

@@ -1,4 +1,5 @@
 CC = gcc #compiler
+#CFLAGS = 
 CFLAGS = -Wall -Wextra -Werror #compiler flags
 NAME = libft #name of file to be created
 RM = rm -f #delete flags
@@ -61,6 +62,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+patch: all lib run
 
 run:
 	./$(NAME)

@@ -6,13 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:53:06 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/14 16:09:09 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/17 17:10:17 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -23,17 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	length = ft_strlen(s);
 	if (start > length || len == 0)
-		return (NULL);
-	if (length < len)
-		sub = malloc((len + 1) * sizeof(char));
-	else
-		sub = malloc((length + 1) * sizeof(char));
-
+		return (ft_calloc(1, 1));
 	i = 0;
-	while (i < len)
+	sub = ft_calloc((i + 1), 1);
+	while (i < len && s[i])
 	{
 		sub[i] = s[i + start];
 		i++;
 	}
+	sub[i] = '\0';
 	return (sub);
-} 
+}

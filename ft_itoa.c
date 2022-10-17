@@ -6,28 +6,29 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/12 11:51:41 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/17 17:08:17 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	ft_itoc(int n);
-int		ft_len(int n);
+static int		space(int n);
+static char		*edge_case(int n, char *word);
 
 char	*ft_itoa(int n)
 {
-	char	*word;
 	int		length;
+	char	*word;
 	int		i;
 
-	if (n == 0)
-		return ("0");
-	if (n == -2147483648)
-		return ("-2147483648");
-	length = ft_len(n);
-	word = malloc((length + 1) * sizeof(char));
+	length = space(n);
+	word = malloc(length + 1);
+	if ((n == 0) || (n == -2147483648))
+	{
+		word = edge_case(n, word);
+		return (word);
+	}
 	if (n < 0)
 	{
 		n = (-1) * n;
@@ -44,10 +45,12 @@ char	*ft_itoa(int n)
 	return (word);
 }
 
-int	ft_len(int n)
+static int	space(int n)
 {
 	int	length;
 
+	if (n == -2147483648)
+		return (11);
 	length = 0;
 	if (n < 0)
 	{
@@ -59,6 +62,20 @@ int	ft_len(int n)
 		n = n / 10;
 		length++;
 	}
-	printf("length: %d\n", length);
 	return (length);
+}
+
+static char	*edge_case(int n, char *word)
+{
+	if (n == -2147483648)
+	{
+		ft_memcpy(word, "-2147483648", 11);
+		return (word);
+	}
+	if (n == 0)
+	{
+		ft_memcpy(word, "0", 2);
+		return (word);
+	}
+	return (word);
 }
