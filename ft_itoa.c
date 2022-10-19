@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/17 17:08:17 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/19 14:41:11 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
+#include <stdio.h>
 
 static int		space(int n);
 static char		*edge_case(int n, char *word);
@@ -23,8 +24,8 @@ char	*ft_itoa(int n)
 	int		i;
 
 	length = space(n);
-	word = malloc(length + 1);
-	if ((n == 0) || (n == -2147483648))
+	word = ft_calloc(length + 1, 1);
+	if (n == -2147483648 || n == 0)
 	{
 		word = edge_case(n, word);
 		return (word);
@@ -35,13 +36,12 @@ char	*ft_itoa(int n)
 		word[0] = '-';
 	}
 	i = 0;
-	while (n >= 1)
+	while (n > 0)
 	{
-		word[length - i - 1] = (n % 10) + '0';
+		word[length - 1] = (n % 10) + '0';
 		n = n / 10;
-		i++;
+		length--;
 	}		
-	word[length] = '\0';
 	return (word);
 }
 
@@ -51,13 +51,15 @@ static int	space(int n)
 
 	if (n == -2147483648)
 		return (11);
+	if (n == 0)
+		return (1);
 	length = 0;
 	if (n < 0)
 	{
 		length++;
 		n = n * (-1);
 	}
-	while (n >= 1)
+	while (n > 0)
 	{
 		n = n / 10;
 		length++;
@@ -74,7 +76,7 @@ static char	*edge_case(int n, char *word)
 	}
 	if (n == 0)
 	{
-		ft_memcpy(word, "0", 2);
+		word[0] = '0';
 		return (word);
 	}
 	return (word);

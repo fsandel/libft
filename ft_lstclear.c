@@ -1,38 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:00:29 by florian           #+#    #+#             */
-/*   Updated: 2022/10/19 13:12:53 by fsandel          ###   ########.fr       */
+/*   Created: 2022/10/19 10:20:39 by fsandel           #+#    #+#             */
+/*   Updated: 2022/10/19 14:24:55 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	out;
-	int	vz;
+#include "libft.h"
 
-	i = 0;
-	out = 0;
-	vz = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			vz = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		out += str[i] - '0';
-		if (str[i + 1] >= '0' && str[i + 1] <= '9')
-			out *= 10;
-		i++;
-	}
-	return (out * vz);
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
 }

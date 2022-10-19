@@ -1,13 +1,22 @@
-CC = gcc #compiler
-#CFLAGS = 
-CFLAGS = -Wall -Wextra -Werror #compiler flags
-NAME = libft #name of file to be created
-RM = rm -f #delete flags
-HEADER = libft.h #header file
-LIBFILE = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
+#    Updated: 2022/10/19 14:46:53 by fsandel          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
+CC				= gcc
+RM				= rm -f
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-SRC	=	main.c \
+NAME			= libft.a
+
+SRCS=	main.c \
 		ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
@@ -42,33 +51,36 @@ SRC	=	main.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c 
 
 
-OBJ = $(SRC:.c=.o)
+BSRC = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
-$(NAME): $(OBJ)
-	$(CC) -o $@ $^
+OBJS			= $(SRCS:.c=.o)
 
-%.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c -o $@ $<
+BONUS_OBJS		= $(BONUS:.c=.o)
 
-all: $(NAME)
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJ)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclean all
+re:				fclean $(NAME)
 
-patch: all lib run
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-run:
-	./$(NAME)
-
-lib: $(OBJ)
-	ar rcs $(LIBFILE) $(OBJ)
-
-.PHONY: all clean fclean re run lib
+.PHONY:			all clean fclean re bonus

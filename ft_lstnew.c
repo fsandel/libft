@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 19:00:29 by florian           #+#    #+#             */
-/*   Updated: 2022/10/19 13:12:53 by fsandel          ###   ########.fr       */
+/*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
+/*   Updated: 2022/10/19 11:12:03 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	i;
-	int	out;
-	int	vz;
+#include "libft.h"
+#include <stdlib.h>
 
-	i = 0;
-	out = 0;
-	vz = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			vz = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		out += str[i] - '0';
-		if (str[i + 1] >= '0' && str[i + 1] <= '9')
-			out *= 10;
-		i++;
-	}
-	return (out * vz);
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*line;
+
+	line = (t_list *)ft_calloc(1, sizeof(t_list *));
+	line ->content = content;
+	line ->next = NULL;
+	return (line);
 }
