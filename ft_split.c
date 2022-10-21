@@ -6,11 +6,10 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:15:05 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/17 17:08:57 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:44:43 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static int	count_splits(char const *s, char c);

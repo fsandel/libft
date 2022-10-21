@@ -6,14 +6,14 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/20 10:34:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:52:19 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -32,7 +32,7 @@ int			ft_isprint(int arg);
 char		*ft_itoa(int n);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(void *str1, void *str2, size_t n);
-void		*ft_memcpy(char *dest, const char *src, size_t n);
+void		*ft_memcpy(char *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, void *src, size_t n);
 void		*ft_memset(void *str, int c, size_t n);
 void		ft_putchar_fd(char c, int fd);
@@ -69,4 +69,3 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void		ft_print_list(t_list *lst);
 
 #endif
-

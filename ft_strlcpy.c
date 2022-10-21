@@ -6,11 +6,10 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:39:17 by florian           #+#    #+#             */
-/*   Updated: 2022/10/17 16:58:33 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:45:32 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)

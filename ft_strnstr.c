@@ -6,11 +6,10 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:56:51 by florian           #+#    #+#             */
-/*   Updated: 2022/10/15 12:00:48 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:45:59 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 const char	*ft_strnstr(const char *big, const char *small, size_t size)

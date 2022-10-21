@@ -6,18 +6,19 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/21 19:11:15 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/21 20:13:23 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
+EXEC			= exec.out
+MAIN			= main.c
 
 LIBNAME			= libft.a
 
-SRCS=	main.c \
-		ft_atoi.c \
+SRCS=	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
 		ft_isalnum.c \
@@ -53,7 +54,6 @@ SRCS=	main.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c 
 
-
 BSRC = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
@@ -80,7 +80,11 @@ fclean:			clean
 
 re:				fclean $(LIBNAME)
 
-bonus:
-				ar rcs $(LIBNAME) $(BSRC) $(BONUS_OBJS)
+bonus:			$(BONUS_OBJS) $(OBJS)
+				ar rcs $(LIBNAME) $(BONUS_OBJS) $(OBJS)
 
-.PHONY:			all clean fclean re bonus
+run:			bonus
+				$(CC) $(CFLAGS) $(MAIN) -L. -lft -o $(EXEC)
+				./$(EXEC)
+
+.PHONY:			all clean fclean re bonus run

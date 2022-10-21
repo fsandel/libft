@@ -6,13 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/19 14:41:11 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:15:04 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 static int		space(int n);
 static char		*edge_case(int n, char *word);

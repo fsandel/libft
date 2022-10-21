@@ -6,12 +6,10 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 17:47:54 by florian           #+#    #+#             */
-/*   Updated: 2022/10/15 13:10:01 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 20:14:55 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nitems, size_t size)

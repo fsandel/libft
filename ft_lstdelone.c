@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:30:36 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/19 16:09:55 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 19:55:10 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	lst = lst->next;
 	del(temp->content);
 	free(temp);
-	
 }
