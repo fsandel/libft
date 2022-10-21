@@ -6,11 +6,11 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/21 20:13:23 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/21 21:33:25 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 EXEC			= exec.out
@@ -54,12 +54,13 @@ SRCS=	ft_atoi.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c 
 
-BSRC = ft_lstnew.c \
+BSRC = 	ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
+		ft_lstclear.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
@@ -87,4 +88,7 @@ run:			bonus
 				$(CC) $(CFLAGS) $(MAIN) -L. -lft -o $(EXEC)
 				./$(EXEC)
 
+wclean:			fclean
+				$(RM) $(EXEC)
+				
 .PHONY:			all clean fclean re bonus run

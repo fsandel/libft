@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:05:46 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 20:11:36 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/21 21:18:03 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst ->next;
 		tail = tail->next;
 	}
-	ft_lstclear(&temp, del);
+	//ft_lstclear(&temp, del);
 	return (out);
 }
