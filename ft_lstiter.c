@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:47:21 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/18 16:05:03 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/20 10:17:14 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	ft_lstiter(t_list *list, void (*f)(void *))
 {
-	t_list	*current;
-
-	current = list;
-	while(current ->next != NULL)
+	while (list)
 	{
-		f(current ->content);
-		current = current ->next;
+		f(list->content);
+		list = list->next;
 	}
 }

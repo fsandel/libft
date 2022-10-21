@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/19 14:46:53 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/21 19:11:15 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
-NAME			= libft.a
+LIBNAME			= libft.a
 
 SRCS=	main.c \
 		ft_atoi.c \
@@ -65,22 +65,22 @@ BSRC = ft_lstnew.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-BONUS_OBJS		= $(BONUS:.c=.o)
+BONUS_OBJS		= $(BSRC:.c=.o)
 
-all:			$(NAME)
+all:			$(LIBNAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(LIBNAME):		$(OBJS)
+				ar rcs $(LIBNAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
-				$(RM) $(NAME)
+				$(RM) $(LIBNAME)
 
-re:				fclean $(NAME)
+re:				fclean $(LIBNAME)
 
-bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:
+				ar rcs $(LIBNAME) $(BSRC) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus

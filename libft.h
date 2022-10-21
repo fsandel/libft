@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/19 11:44:25 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/20 10:34:35 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
 void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstclear(t_list **lst, void (*del)(void *));
-
-//t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-//void		ft_lstclear(t_list **lst, void (*del)(void *));
-
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
+void		ft_lstiter(t_list *list, void (*f)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 void		ft_print_list(t_list *lst);
 
 #endif
+
