@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:31:47 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 11:13:56 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:55:46 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	len = 1;
 	len = ft_strlen(s);
 	out = ft_calloc(len + 1, 1);
+	if (!out)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{

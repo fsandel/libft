@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:53:06 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 11:25:07 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:51:31 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start > length || len == 0)
 		return (ft_calloc(1, 1));
 	sub = ft_calloc(ft_calc_mem(s, start, len) + 1, 1);
+	if (!sub)
+		return (NULL);
 	while (i < len && s[i])
 	{
 		sub[i] = s[i + start];

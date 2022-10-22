@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:44:14 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 10:57:23 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:41:54 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_strjoin(char const *first, char const *second)
 
 	i1 = 0;
 	i2 = 0;
-	joined = malloc((ft_strlen(first) + ft_strlen(second) + 1) * sizeof(char));
+	joined = ft_calloc((ft_strlen(first) + ft_strlen(second) + 1), 1);
+	if (!joined)
+		return (NULL);
 	while (first[i1])
 	{
 		joined[i1] = first[i1];

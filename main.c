@@ -6,15 +6,15 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 14:17:31 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 19:53:07 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:43:55 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 int	main(void)
 {
-	printf("Hello, World!");
 	return (0);
 }

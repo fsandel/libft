@@ -13,8 +13,8 @@
 //checks if argument is letter
 int	ft_isalpha(int arg)
 {
-	if ((arg >= 'a' && arg <= 'z') | (arg >= 'A' && arg <= 'Z'))
-		return (1024);
+	if ((arg >= 'a' && arg <= 'z') || (arg >= 'A' && arg <= 'Z'))
+		return (1);
 	else
 		return (0);
 }

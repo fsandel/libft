@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:14:22 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 11:11:02 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:56:25 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[right - 1] && ft_strchr(set, s1[right - 1]) && right > left)
 		right--;
 	trimmed = ft_calloc(right - left + 1, 1);
+	if (!trimmed)
+		return (NULL);
 	while (left < right)
 	{
 		trimmed[i] = s1[left];

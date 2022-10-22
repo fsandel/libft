@@ -6,15 +6,16 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/21 21:33:25 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/22 15:32:52 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror
 EXEC			= exec.out
 MAIN			= main.c
+AFLAGS			= -rcs
 
 LIBNAME			= libft.a
 
@@ -64,31 +65,31 @@ BSRC = 	ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-OBJS			= $(SRCS:.c=.o)
+OBJS				= $(SRCS:.c=.o)
 
-BONUS_OBJS		= $(BSRC:.c=.o)
+BONUS_OBJS			= $(BSRC:.c=.o)
 
-all:			$(LIBNAME)
+all:				$(LIBNAME)
 
-$(LIBNAME):		$(OBJS)
-				ar rcs $(LIBNAME) $(OBJS)
+$(LIBNAME):			$(OBJS)
+					ar $(AFLAGS) $(LIBNAME) $(OBJS)
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+					$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean:			clean
-				$(RM) $(LIBNAME)
+fclean:				clean
+					$(RM) $(LIBNAME)
 
-re:				fclean $(LIBNAME)
+re:					fclean $(LIBNAME)
 
-bonus:			$(BONUS_OBJS) $(OBJS)
-				ar rcs $(LIBNAME) $(BONUS_OBJS) $(OBJS)
+bonus:				$(BONUS_OBJS)
+					ar $(AFLAGS) $(LIBNAME) $(BONUS_OBJS)
 
-run:			bonus
-				$(CC) $(CFLAGS) $(MAIN) -L. -lft -o $(EXEC)
-				./$(EXEC)
+run:				$(LIBNAME)
+					$(CC) $(CFLAGS) $(MAIN) -L. -lft -o $(EXEC) $(LIBNAME)
+					./$(EXEC)
 
-wclean:			fclean
-				$(RM) $(EXEC)
+wclean:				fclean
+					$(RM) $(EXEC)
 				
-.PHONY:			all clean fclean re bonus run
+.PHONY:				all clean fclean re bonus run wclean

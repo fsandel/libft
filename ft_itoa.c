@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 10:36:52 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:43:47 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ char	*ft_itoa(int n)
 
 	length = ft_space(n);
 	word = ft_calloc(length + 1, 1);
+	if (!word)
+		return (NULL);
 	if (n == -2147483648 || n == 0)
-	{
-		word = ft_edge_case(n, word);
-		return (word);
-	}
+		return (ft_edge_case(n, word));
 	if (n < 0)
 	{
 		n = (-1) * n;

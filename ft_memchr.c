@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 14:09:31 by florian           #+#    #+#             */
-/*   Updated: 2022/10/22 10:43:23 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:40:23 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,18 @@
 //searches for c in s and returns a pointer
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned int	i;
-	unsigned char	*p;
-	unsigned char	*chr;
+	size_t			i;
+	unsigned char	*ss;
+	unsigned char	cc;
 
-	chr = NULL;
-	p = (unsigned char *)s;
+	cc = (unsigned char)c;
+	ss = (unsigned char *)s;
 	i = 0;
-	while (s && i < n)
+	while (i < n)
 	{
-		if (*p != (unsigned char)c)
-			p++;
-		else
-		{
-			chr = p;
-			break ;
-		}
+		if (ss[i] == cc)
+			return (ss + i);
 		i++;
 	}
-	return (chr);
+	return (NULL);
 }

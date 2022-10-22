@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:56:51 by florian           #+#    #+#             */
-/*   Updated: 2022/10/22 11:13:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:08:06 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ const char	*ft_strnstr(const char *big, const char *small, size_t size)
 	size_t	j;
 	size_t	i;
 
+	if (big == NULL && size == 0)
+		return (NULL);
 	if (small[0] == '\0')
 		return (big);
 	i = 0;

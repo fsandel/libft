@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 16:41:34 by florian           #+#    #+#             */
-/*   Updated: 2022/10/22 10:58:25 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 17:14:05 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	dest_len;
 	size_t	src_len;
 
+	if (dest == NULL && size == 0)
+		return (ft_strlen(src));
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	if (size < dest_len)

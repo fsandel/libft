@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:15:05 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 10:52:01 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 15:59:28 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ char	**ft_split(char const *s, char c)
 		return (array);
 	}
 	array = (char **)ft_calloc(ft_count_splits(s, c) + 2, sizeof(char *));
+	if (!array)
+		return (NULL);
 	array = ft_fill_array(array, s, c);
 	return (array);
 }
