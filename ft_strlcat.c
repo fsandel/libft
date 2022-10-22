@@ -6,12 +6,14 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 16:41:34 by florian           #+#    #+#             */
-/*   Updated: 2022/10/21 19:45:27 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:58:25 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//puts string src at the end of string dest, up to size chars and size of dest
+//returns length of new string
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;

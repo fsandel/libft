@@ -6,26 +6,29 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 20:15:04 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:36:52 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		space(int n);
-static char		*edge_case(int n, char *word);
+//calculates the needed amount of space for the number
+static int		ft_space(int n);
+//cares about edge case 0 and INT_MIN
+static char		*ft_edge_case(int n, char *word);
 
+//takes an integer and returns it as a character
 char	*ft_itoa(int n)
 {
 	int		length;
 	char	*word;
 	int		i;
 
-	length = space(n);
+	length = ft_space(n);
 	word = ft_calloc(length + 1, 1);
 	if (n == -2147483648 || n == 0)
 	{
-		word = edge_case(n, word);
+		word = ft_edge_case(n, word);
 		return (word);
 	}
 	if (n < 0)
@@ -43,7 +46,7 @@ char	*ft_itoa(int n)
 	return (word);
 }
 
-static int	space(int n)
+static int	ft_space(int n)
 {
 	int	length;
 
@@ -65,7 +68,7 @@ static int	space(int n)
 	return (length);
 }
 
-static char	*edge_case(int n, char *word)
+static char	*ft_edge_case(int n, char *word)
 {
 	if (n == -2147483648)
 	{

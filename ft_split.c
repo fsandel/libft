@@ -6,17 +6,22 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:15:05 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 19:44:43 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:52:01 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_splits(char const *s, char c);
+//counts number of splits in string s
+static int	ft_count_splits(char const *s, char c);
+//counts the length of the next word in string s
 static int	ft_word_len(char const *s, char c, int w);
+//checks if string only consists of seperators
 static int	ft_only_sep(char const *s, char c);
+//function to fill the array
 static char	**ft_fill_array(char **array, char const *s, char c);
 
+//takes string s, splits it at character c and returns a array with content of s
 char	**ft_split(char const *s, char c)
 {
 	char	**array;
@@ -33,7 +38,7 @@ char	**ft_split(char const *s, char c)
 		array[0] = NULL;
 		return (array);
 	}
-	array = (char **)ft_calloc(count_splits(s, c) + 2, sizeof(char *));
+	array = (char **)ft_calloc(ft_count_splits(s, c) + 2, sizeof(char *));
 	array = ft_fill_array(array, s, c);
 	return (array);
 }
@@ -49,7 +54,7 @@ static char	**ft_fill_array(char **array, char const *s, char c)
 	w = 0;
 	j = 0;
 	i = 0;
-	while (s[w] && j < count_splits(s, c) + 1)
+	while (s[w] && j < ft_count_splits(s, c) + 1)
 	{
 		while (s[w] == c)
 			w++;
@@ -65,7 +70,7 @@ static char	**ft_fill_array(char **array, char const *s, char c)
 	return (array);
 }
 
-static int	count_splits(char const *s, char c)
+static int	ft_count_splits(char const *s, char c)
 {
 	int	i;
 	int	count;

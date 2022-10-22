@@ -6,10 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:00:29 by florian           #+#    #+#             */
-/*   Updated: 2022/10/19 13:12:53 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:29:51 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//converts a string to integer, ignoring whitespace
 int	ft_atoi(const char *str)
 {
 	int	i;

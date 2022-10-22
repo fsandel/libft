@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:56:53 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 19:44:30 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:49:09 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//writes number n to file descriptor fd
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)

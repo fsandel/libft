@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:39:24 by florian           #+#    #+#             */
-/*   Updated: 2022/10/21 19:44:51 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:52:17 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//search for c in str and returns pointer to it
 char	*ft_strchr(char const *str, int c)
 {
 	int				length;

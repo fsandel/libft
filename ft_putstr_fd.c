@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:37:34 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 19:44:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:49:25 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//writes string s to file descriptor fd
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;

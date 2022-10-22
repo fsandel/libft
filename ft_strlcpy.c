@@ -6,12 +6,14 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 15:39:17 by florian           #+#    #+#             */
-/*   Updated: 2022/10/21 19:45:32 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:14:06 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//puts up to size chars from src to beginning of destination
+//cares about destination size
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;

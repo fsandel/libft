@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:47:09 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 21:11:21 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:37:36 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//adds the list new to the end of list lst
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;

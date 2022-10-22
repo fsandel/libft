@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:47:21 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/20 10:17:14 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:39:37 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//uses fucntion f on each node of a list
 void	ft_lstiter(t_list *list, void (*f)(void *))
 {
 	while (list)

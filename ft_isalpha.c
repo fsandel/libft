@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks if argument is letter
 int	ft_isalpha(int arg)
 {
 	if ((arg >= 'a' && arg <= 'z') | (arg >= 'A' && arg <= 'Z'))

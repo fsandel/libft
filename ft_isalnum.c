@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks if argument is number or letter
 int	ft_isalnum(int arg)
 {
 	if ((arg >= '0' && arg <= '9')
-		| (arg >= 'a' && arg <= 'z')
-		| (arg >= 'A' && arg <= 'Z'))
+		|| (arg >= 'a' && arg <= 'z')
+		|| (arg >= 'A' && arg <= 'Z'))
 		return (8);
 	else
 		return (0);

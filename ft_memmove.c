@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+//moves from src to dest, checks for overlapp
 void	*ft_memmove(void *dest, void *src, size_t n)
 {
 	char	*csrc;

@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:14:22 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 20:44:54 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:11:02 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//cuts characters in set from start and beginning from s1
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimmed;

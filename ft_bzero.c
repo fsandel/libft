@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//fills up to n chars in a string with '/0' char
 void	*ft_bzero(char *str, size_t n)
 {
 	size_t	i;

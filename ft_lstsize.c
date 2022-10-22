@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 13:21:11 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/18 15:12:15 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:42:07 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//returns the amount of nodes of a list
 int	ft_lstsize(t_list *lst)
 {
 	int		i;

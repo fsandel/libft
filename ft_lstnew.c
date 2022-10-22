@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 20:15:20 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:41:47 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//creates a new node with given content and returns it
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*line;

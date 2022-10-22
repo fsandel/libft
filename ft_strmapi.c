@@ -6,12 +6,14 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:31:47 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/19 13:15:14 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:13:56 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//uses fucniton f on each character of string s
+//returns array with the output of the function
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		len;

@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:26:21 by florian           #+#    #+#             */
-/*   Updated: 2022/10/19 11:49:24 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:04:17 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//searches character c in string str, starts from behind
 char	*ft_strrchr(const char *str, int c)
 {
 	int				i;

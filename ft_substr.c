@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:53:06 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/21 20:41:39 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:12:47 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//copies string s, starts at atart, up to len chars
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;

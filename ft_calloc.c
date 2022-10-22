@@ -6,12 +6,12 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 17:47:54 by florian           #+#    #+#             */
-/*   Updated: 2022/10/21 20:14:55 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 10:31:45 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//creates a pointer and fills it with zeros
 void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*ptr;

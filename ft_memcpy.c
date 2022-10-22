@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+//copies from pointer src to the beginning of dest
+//overwriting and doesnt check for overlapping, up to n entries
 void	*ft_memcpy(char *dest, const void *src, size_t n)
 {
 	size_t		i;

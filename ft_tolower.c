@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:35:18 by florian           #+#    #+#             */
-/*   Updated: 2022/09/07 12:35:44 by florian          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:13:05 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//turns capital letter into small letter
 int	ft_tolower(int chr)
 {
 	if (chr >= 'A' && chr <= 'Z')

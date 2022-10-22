@@ -6,12 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 13:46:39 by florian           #+#    #+#             */
-/*   Updated: 2022/10/21 19:45:54 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:03:04 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//compares two strings, up to num characters and returns the difference
 int	ft_strncmp(const char *str1, const char *str2, size_t num)
 {
 	size_t			i;

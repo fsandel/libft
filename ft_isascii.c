@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks if arg is part of basic ascii table
 int	ft_isascii(int arg)
 {
 	if (arg >= 0 && arg <= 127)

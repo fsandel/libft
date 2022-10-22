@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 12:23:05 by florian           #+#    #+#             */
-/*   Updated: 2022/09/07 12:32:10 by florian          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:13:18 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//turns small letter into capital letter
 int	ft_toupper(int chr)
 {
 	if (chr >= 'a' && chr <= 'z')
