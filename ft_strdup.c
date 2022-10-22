@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/08 19:13:39 by florian           #+#    #+#             */
-/*   Updated: 2022/10/22 10:54:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/22 11:27:29 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*str;
 	int		i;
 
-	str = malloc(ft_strlen(s));
+	str = malloc(ft_strlen(s) + 1);
 	i = 0;
 	while (s[i])
 	{
