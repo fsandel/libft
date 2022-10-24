@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:15:05 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 15:59:28 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/24 10:13:01 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 
 	if (s == 0 || s == NULL )
-	{
-		array = ft_calloc(1, sizeof(char *));
-		array[0] = 0;
 		return (0);
-	}
 	if (ft_only_sep(s, c))
 	{
 		array = ft_calloc(1, sizeof(char *));
@@ -51,24 +47,25 @@ static char	**ft_fill_array(char **array, char const *s, char c)
 	int		w;
 	int		i;
 	int		j;
-	int		word_len;
 
 	w = 0;
 	j = 0;
-	i = 0;
 	while (s[w] && j < ft_count_splits(s, c) + 1)
 	{
 		while (s[w] == c)
 			w++;
-		word_len = ft_word_len(s, c, w);
-		word = ft_calloc(word_len + 1, 1);
+		word = (char *)ft_calloc(ft_word_len(s, c, w) + 1, sizeof(char));
+		if (word == NULL)
+		{
+			free(array);
+			return (NULL);
+		}
 		i = 0;
 		while (s[w] && s[w] != c)
 			word[i++] = s[w++];
-		array[j] = word;
-		j++;
+		array[j++] = word;
 	}
-	array[j] = 0;
+	array[j] = NULL;
 	return (array);
 }
 
@@ -82,13 +79,11 @@ static int	ft_count_splits(char const *s, char c)
 	if (c == 0)
 		return (0);
 	while (s[i] == c)
-	{
 		i++;
-	}
 	while (s[i])
 	{
 		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
-			count ++;
+			count++;
 		i++;
 	}
 	return (count);
