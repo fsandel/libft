@@ -6,18 +6,15 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/22 15:32:52 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/24 14:16:33 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
-EXEC			= exec.out
-MAIN			= main.c
-AFLAGS			= -rcs
-
-LIBNAME			= libft.a
+AFLAGS			= ar -rcs
+NAME			= libft.a
 
 SRCS=	ft_atoi.c \
 		ft_bzero.c \
@@ -69,27 +66,20 @@ OBJS				= $(SRCS:.c=.o)
 
 BONUS_OBJS			= $(BSRC:.c=.o)
 
-all:				$(LIBNAME)
+all:				$(NAME)
 
-$(LIBNAME):			$(OBJS)
-					ar $(AFLAGS) $(LIBNAME) $(OBJS)
+$(NAME):			$(OBJS)
+					$(AFLAGS) $(NAME) $(OBJS)
 
 clean:
 					$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:				clean
-					$(RM) $(LIBNAME)
+					$(RM) $(NAME)
 
-re:					fclean $(LIBNAME)
+re:					fclean $(NAME)
 
 bonus:				$(BONUS_OBJS)
-					ar $(AFLAGS) $(LIBNAME) $(BONUS_OBJS)
+					$(AFLAGS) $(NAME) $(BONUS_OBJS)
 
-run:				$(LIBNAME)
-					$(CC) $(CFLAGS) $(MAIN) -L. -lft -o $(EXEC) $(LIBNAME)
-					./$(EXEC)
-
-wclean:				fclean
-					$(RM) $(EXEC)
-				
 .PHONY:				all clean fclean re bonus run wclean
