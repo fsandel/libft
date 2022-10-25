@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 17:56:51 by florian           #+#    #+#             */
-/*   Updated: 2022/10/22 17:08:06 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/25 15:57:30 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //searches for string small in string big and returns a pointer it
 //checks up to size characters
-const char	*ft_strnstr(const char *big, const char *small, size_t size)
+char	*ft_strnstr(const char *big, const char *small, size_t size)
 {
 	size_t	j;
 	size_t	i;
@@ -22,7 +22,7 @@ const char	*ft_strnstr(const char *big, const char *small, size_t size)
 	if (big == NULL && size == 0)
 		return (NULL);
 	if (small[0] == '\0')
-		return (big);
+		return ((char *)big);
 	i = 0;
 	while (big[i] && i < size)
 	{
@@ -32,7 +32,7 @@ const char	*ft_strnstr(const char *big, const char *small, size_t size)
 			j++;
 			if (small[j] == '\0')
 			{
-				return (big + i);
+				return ((char *)(big + i));
 			}
 		}
 		i++;

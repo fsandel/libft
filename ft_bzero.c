@@ -13,15 +13,7 @@
 #include "libft.h"
 
 //fills up to n chars in a string with '/0' char
-void	*ft_bzero(char *str, size_t n)
+void	ft_bzero(char *str, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (0);
+	ft_memset(str, 0, n);
 }

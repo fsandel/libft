@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 12:12:39 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/22 10:54:59 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/25 16:38:57 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		(*f)(i, s + i);
+		f(i, s + i);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/24 14:16:33 by fsandel          ###   ########.fr        #
+#    Updated: 2022/10/25 14:02:50 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,4 +82,4 @@ re:					fclean $(NAME)
 bonus:				$(BONUS_OBJS)
 					$(AFLAGS) $(NAME) $(BONUS_OBJS)
 
-.PHONY:				all clean fclean re bonus run wclean
+.PHONY:				all clean fclean re bonus
