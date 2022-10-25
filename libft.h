@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/25 16:09:01 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:10:09 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list
 }					t_list;
 
 int			ft_atoi(const char *str);
-void		ft_bzero(char *str, size_t n);
+void		ft_bzero(void *str, size_t n);
 void		*ft_calloc(size_t nitems, size_t size);
 int			ft_isalnum(int arg);
 int			ft_isalpha(int arg);
