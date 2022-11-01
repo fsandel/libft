@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/10/25 17:10:09 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:26:39 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -65,5 +66,24 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstdelone(t_list *lst, void (*del)(void*));
 void		ft_lstiter(t_list *list, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+int			ft_printf(const char *str, ...);
+
+int			ft_print_char(va_list arg);
+int			ft_print_str(va_list arg);
+int			ft_print_void(va_list arg);
+int			ft_print_deci(va_list arg);
+int			ft_print_int(va_list arg);
+
+int			ft_print_unsi(va_list arg);
+int			ft_print_hexa_low(va_list arg);
+int			ft_print_hexa_up(va_list arg);
+int			ft_print_perc(void);
+
+char		*ft_rev_string(char *str);
+int			ft_num_len(int n);
+char		*ft_int_to_hex(unsigned long arg_int);
+int			ft_unsi_num_len(unsigned int i);
+void		ft_putunsi_fd(unsigned int nb, int fd);
 
 #endif
