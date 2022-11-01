@@ -6,11 +6,14 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:38:43 by fsandel           #+#    #+#             */
-/*   Updated: 2022/11/01 11:21:47 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/11/01 11:35:02 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//start the print function for the right flag
+static int	ft_argument(va_list arg, char a);
 
 //prints given string and enters extra arguments at flag positions
 //returns amount of printed characters
@@ -40,7 +43,6 @@ int	ft_printf(const char *print_string, ...)
 	return (total);
 }
 
-//start the print function for the right flag
 static int	ft_argument(va_list arg, char a)
 {
 	int	len;

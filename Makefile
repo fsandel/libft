@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/10/25 14:02:50 by fsandel          ###   ########.fr        #
+#    Updated: 2022/11/01 11:34:27 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,14 @@ SRCS=	ft_atoi.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c 
-
-BSRC = 	ft_lstnew.c \
+		ft_putnbr_fd.c \
+		\
+		ft_printf.c \
+		ft_printf_arg.c \
+		ft_printf_arg2.c \
+		ft_printf_utils.c \
+		\
+		ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -63,8 +68,6 @@ BSRC = 	ft_lstnew.c \
 		ft_lstmap.c
 
 OBJS				= $(SRCS:.c=.o)
-
-BONUS_OBJS			= $(BSRC:.c=.o)
 
 all:				$(NAME)
 
@@ -79,7 +82,4 @@ fclean:				clean
 
 re:					fclean $(NAME)
 
-bonus:				$(BONUS_OBJS)
-					$(AFLAGS) $(NAME) $(BONUS_OBJS)
-
-.PHONY:				all clean fclean re bonus
+.PHONY:				all clean fclean re
