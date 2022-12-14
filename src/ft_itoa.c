@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:09:07 by fsandel           #+#    #+#             */
-/*   Updated: 2022/11/08 11:52:48 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/14 20:00:01 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	*ft_itoa(int n)
 {
 	int		length;
 	char	*word;
-	int		i;
 
 	length = ft_space(n);
 	word = ft_calloc(length + 1, 1);
@@ -35,7 +34,6 @@ char	*ft_itoa(int n)
 		n = (-1) * n;
 		word[0] = '-';
 	}
-	i = 0;
 	while (n > 0)
 	{
 		word[length - 1] = (n % 10) + '0';
