@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/11/10 18:27:30 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/16 13:45:31 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,14 +50,16 @@ $(NAME):			$(OBJ)
 					@$(AFLAGS) $(NAME) $(OBJ)
 
 clean:
-					$(RM) $(OBJ)
+					@$(RM) $(OBJ)
+					@echo "cleaned $(NAME)"
 
 fclean:				
-					make clean
-					$(RM) $(NAME)
+					@make clean
+					@$(RM) $(NAME)
+					@echo "fcleaned $(NAME)"
 
 re:					
-					make fclean
-					make all
+					@make fclean
+					@make all
 
 .PHONY:				all clean fclean re
