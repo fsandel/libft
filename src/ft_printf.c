@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:38:43 by fsandel           #+#    #+#             */
-/*   Updated: 2022/11/08 11:54:01 by fsandel          ###   ########.fr       */
+/*   Updated: 2023/01/28 10:46:28 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 
 //start the print function for the right flag
 static int	ft_argument(va_list arg, char a);
+int			ft_print_char(va_list arg);
+int			ft_print_str(va_list arg);
+int			ft_print_void(va_list arg);
+int			ft_print_deci(va_list arg);
+int			ft_print_int(va_list arg);
+
+int			ft_print_unsi(va_list arg);
+int			ft_print_hexa_low(va_list arg);
+int			ft_print_hexa_up(va_list arg);
+int			ft_print_perc(void);
 
 //prints given string and enters extra arguments at flag positions
 //returns amount of printed characters
