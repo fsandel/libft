@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/16 13:45:31 by fsandel          ###   ########.fr        #
+#    Updated: 2023/01/28 11:01:33 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,26 +40,32 @@ SRC_FILES=		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 				\
 				ft_putnbr_base_fd.c ft_itobase.c
 
-$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
-				@mkdir -p $(OBJ_DIR)
-				@$(CC) $(CFLAGS) -c $< -o $@
+all:				mkdir $(NAME)
 
-all:				$(NAME)
+$(OBJ_DIR)%.o:	$(SRC_DIR)%.c
+				@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):			$(OBJ)
 					@$(AFLAGS) $(NAME) $(OBJ)
+					@echo $(GREEN)"created $(NAME)"$(DEFAULT)
+
 
 clean:
-					@$(RM) $(OBJ)
-					@echo "cleaned $(NAME)"
+					@rm -rf $(OBJ)
+					@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
 
 fclean:				
-					@make clean
-					@$(RM) $(NAME)
-					@echo "fcleaned $(NAME)"
+					@rm -rf $(OBJ)
+					@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
 
-re:					
-					@make fclean
-					@make all
+re:	fclean all
 
-.PHONY:				all clean fclean re
+mkdir:
+				@mkdir -p $(OBJ_DIR)
+
+.PHONY:				all clean fclean re mkdir
+
+GREEN			= "\033[32m"
+LGREEN			= "\033[92m"
+DEFAULT			= "\033[39m"
+RED				= "\033[31m"
