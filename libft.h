@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2023/01/28 10:46:52 by fsandel          ###   ########.fr       */
+/*   Updated: 2023/02/18 11:10:35 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,7 @@ char		*get_next_line(int fd);
 
 int			ft_putnbr_base_fd(int n, char const *base, int fd);
 char		*ft_itobase(int n, char *base, int len);
+
+void		ft_err_print(char *str, char *s1, char *s2, char *s3);
 
 #endif

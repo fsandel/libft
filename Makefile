@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2023/01/28 11:01:33 by fsandel          ###   ########.fr        #
+#    Updated: 2023/02/18 11:10:04 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,9 @@ SRC_FILES=		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 				\
 				get_next_line.c\
 				\
-				ft_putnbr_base_fd.c ft_itobase.c
+				ft_putnbr_base_fd.c ft_itobase.c \
+				\
+				ft_err_print.c
 
 all:				mkdir $(NAME)
 
