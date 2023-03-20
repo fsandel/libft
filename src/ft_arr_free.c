@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_arr_free.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
+/*   Created: 2023/03/20 09:06:11 by fsandel           #+#    #+#             */
 /*   Updated: 2023/03/20 11:12:26 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//creates a new node with given content and returns it
-t_list	*ft_lstnew(void *content)
+void	ft_arr_free(char **arr)
 {
-	t_list	*line;
+	int	i;
 
-	line = ft_calloc(1, sizeof(t_list));
-	if (!line)
-		return (NULL);
-	line ->content = content;
-	line ->next = NULL;
-	return (line);
+	if (!arr)
+		return ;
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }

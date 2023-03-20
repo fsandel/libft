@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:04:41 by fsandel           #+#    #+#             */
-/*   Updated: 2023/02/18 11:10:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2023/03/20 10:55:10 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,14 @@ int			ft_putnbr_base_fd(int n, char const *base, int fd);
 char		*ft_itobase(int n, char *base, int len);
 
 void		ft_err_print(char *str, char *s1, char *s2, char *s3);
+
+char		**ft_arr_add_line(char **arr, char *line);
+char		**ft_arr_dup(char **arr);
+void		ft_arr_free(char **arr);
+int			ft_arr_size(char **arr);
+char		**ft_read_file(int fd);
+char		*ft_str_append_chr(char *str, char chr);
+char		*ft_str_append_str(char *first, char *second);
+void		ft_putarr_fd(char **arr, int fd);
 
 #endif

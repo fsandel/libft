@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_str_append_str.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
+/*   Created: 2023/03/20 09:06:19 by fsandel           #+#    #+#             */
 /*   Updated: 2023/03/20 11:12:26 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//creates a new node with given content and returns it
-t_list	*ft_lstnew(void *content)
+char	*ft_str_append_str(char *first, char *second)
 {
-	t_list	*line;
+	char	*ret;
 
-	line = ft_calloc(1, sizeof(t_list));
-	if (!line)
-		return (NULL);
-	line ->content = content;
-	line ->next = NULL;
-	return (line);
+	if (!second)
+		return (first);
+	if (!first)
+		return (ft_strdup(second));
+	ret = ft_calloc(ft_strlen(first) + ft_strlen(second) + 1, sizeof(char));
+	ft_memmove(ret, first, ft_strlen(first));
+	ft_memmove(&ret[ft_strlen(first)], second, ft_strlen(second));
+	free(first);
+	first = ret;
+	return (ret);
 }

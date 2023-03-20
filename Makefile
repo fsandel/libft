@@ -6,21 +6,22 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 14:46:21 by fsandel           #+#    #+#              #
-#    Updated: 2023/02/18 11:10:04 by fsandel          ###   ########.fr        #
+#    Updated: 2023/03/20 11:11:37 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC				= cc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
-AFLAGS			= ar -rcs
 NAME			= libft.a
-OBJ_FILES		= $(SRC_FILES:.c=.o)
-OBJ				= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+CC				= cc
+
+CFLAGS			= -Wall -Wextra -Werror 
+AFLAGS			= ar -rcs
+
 OBJ_DIR			= ./obj/
+OBJ				= $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+OBJ_FILES		= $(SRC_FILES:.c=.o)
+
 SRC_DIR			= ./src/
 SRC				= $(addprefix $(SRC_DIR), $(SRC_FILES))
-
 SRC_FILES=		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 				ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c\
 				ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c\
@@ -40,34 +41,37 @@ SRC_FILES=		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 				\
 				ft_putnbr_base_fd.c ft_itobase.c \
 				\
-				ft_err_print.c
+				ft_err_print.c \
+				\
+				ft_putarr_fd.c ft_read_file.c ft_str_append_chr.c ft_arr_size.c\
+				ft_arr_add_line.c ft_arr_dup.c ft_arr_free.c ft_str_append_str.c
 
-all:				mkdir $(NAME)
+all:			$(OBJ_DIR) $(NAME)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 				@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME):			$(OBJ)
-					@$(AFLAGS) $(NAME) $(OBJ)
-					@echo $(GREEN)"created $(NAME)"$(DEFAULT)
-
+$(NAME):		$(OBJ)
+				@$(AFLAGS) $(NAME) $(OBJ)
+				@echo $(GREEN)"created $(NAME)"$(DEFAULT)
 
 clean:
-					@rm -rf $(OBJ)
-					@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
+				@rm -rf $(OBJ)
+				@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
 
-fclean:				
-					@rm -rf $(OBJ)
-					@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
+fclean:
+				@rm -rf $(OBJ)
+				@rm -f $(NAME)
+				@echo $(RED)"cleaned $(NAME)"$(DEFAULT)
 
-re:	fclean all
+re:				fclean all
 
-mkdir:
+$(OBJ_DIR):
 				@mkdir -p $(OBJ_DIR)
 
-.PHONY:				all clean fclean re mkdir
+.PHONY:			all clean fclean re
 
+DEFAULT			= "\033[39m"
 GREEN			= "\033[32m"
 LGREEN			= "\033[92m"
-DEFAULT			= "\033[39m"
 RED				= "\033[31m"

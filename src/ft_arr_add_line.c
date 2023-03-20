@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_arr_add_line.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
+/*   Created: 2023/03/20 09:06:04 by fsandel           #+#    #+#             */
 /*   Updated: 2023/03/20 11:12:26 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//creates a new node with given content and returns it
-t_list	*ft_lstnew(void *content)
+char	**ft_arr_add_line(char **arr, char *line)
 {
-	t_list	*line;
+	int		i;
+	char	**ret;
 
-	line = ft_calloc(1, sizeof(t_list));
 	if (!line)
 		return (NULL);
-	line ->content = content;
-	line ->next = NULL;
-	return (line);
+	if (!arr)
+	{
+		arr = ft_calloc(2, sizeof(char *));
+		arr[0] = ft_strdup(line);
+		arr[1] = NULL;
+		return (arr);
+	}
+	ret = ft_calloc(ft_arr_size(arr) + 2, sizeof(char *));
+	i = 0;
+	while (arr[i])
+	{
+		ret[i] = ft_strdup(arr[i]);
+		i++;
+	}
+	ret[i++] = ft_strdup(line);
+	ret[i] = NULL;
+	ft_arr_free(arr);
+	arr = ret;
+	return (ret);
 }

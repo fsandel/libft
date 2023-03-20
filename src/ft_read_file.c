@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_read_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 11:45:13 by fsandel           #+#    #+#             */
+/*   Created: 2023/03/20 09:06:14 by fsandel           #+#    #+#             */
 /*   Updated: 2023/03/20 11:12:26 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-//creates a new node with given content and returns it
-t_list	*ft_lstnew(void *content)
+char	**ft_read_file(int fd)
 {
-	t_list	*line;
+	char	buf[1];
+	char	**ret;
+	char	*line;
+	int		bytes_read;
 
-	line = ft_calloc(1, sizeof(t_list));
-	if (!line)
+	if (fd < 0)
 		return (NULL);
-	line ->content = content;
-	line ->next = NULL;
-	return (line);
+	if (read(fd, buf, 0) < 0)
+		return (NULL);
+	bytes_read = 1;
+	line = NULL;
+	while (bytes_read == 1)
+	{
+		bytes_read = read(fd, buf, 1);
+		if (bytes_read != 1)
+			break ;
+		line = ft_str_append_chr(line, buf[0]);
+	}
+	ret = ft_split(line, '\n');
+	free(line);
+	return (ret);
 }
